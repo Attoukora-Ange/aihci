@@ -12,14 +12,14 @@ configDotenv({ path: "./config/.env" }); // Configuration de dotenv
 const App = express();
 
 // Configuration de CORS
-// const corsOptions = {
-//   origin: ["https://aihci-client.vercel.app"],
-//   methods: ["GET", "PUT", "POST", "DELETE"],
-//   allowedHeaders: "Content-Type,Authorization",
-// };
 const corsOptions = {
-  origin: "*",
+  origin: ["https://aihci-client.vercel.app"],
+  credentials:true,
+  methods: ["GET", "PUT", "POST", "DELETE"],
+  "allowedHeaders": ["Content-Type","Authorization"],
+  "preflightContinue": false
 };
+
 App.use(cors(corsOptions));
 
 App.use(express.json());
