@@ -20,7 +20,7 @@ const App = express();
 // };
 
 const corsOptions = {
-  "Access-Control-Allow-Origin": ["https://aihci-client.vercel.app"],
+  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Credentials": true,
   "Access-Control-Allow-Methods": ["GET", "PUT", "POST", "DELETE"],
   "Access-Control-Allow-Headers": ["Content-Type", "Authorization"],
