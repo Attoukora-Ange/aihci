@@ -135,7 +135,7 @@ export const InfoSoumissionDetail = () => {
               <TableCell
                 sx={{ fontSize: 12, fontWeight: 300 }}
                 component={Link}
-                to={"http://localhost:5000/" + row.fichier}
+                to={row.fichier}
                 target="_blank"
                 scope="row"
               >
