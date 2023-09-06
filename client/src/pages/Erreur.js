@@ -5,8 +5,8 @@ const StyledTypographyNumber = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   fontFamily: "Montserrat",
   color: "red",
+  textAlign: "center",
   [theme.breakpoints.down("md")]: {
-    textAlign: "center",
     fontSize: 40,
     width: "100%",
   },
@@ -15,8 +15,8 @@ const StyledTypographyText1 = styled(Typography)(({ theme }) => ({
   fontSize: 50,
   fontWeight: 500,
   fontFamily: "Montserrat",
+  textAlign: "center",
   [theme.breakpoints.down("md")]: {
-    textAlign: "center",
     fontSize: 30,
     width: "100%",
   },
@@ -25,8 +25,8 @@ const StyledTypographyText2 = styled(Typography)(({ theme }) => ({
   fontSize: 24,
   fontWeight: 500,
   fontFamily: "Montserrat",
+  textAlign: "center",
   [theme.breakpoints.down("md")]: {
-    textAlign: "center",
     fontSize: 14,
     width: "100%",
   },

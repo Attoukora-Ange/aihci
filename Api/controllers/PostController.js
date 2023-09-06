@@ -25,7 +25,6 @@ export const getAllPostsArticleRoute = async (_, res) => {
 
 export const getOnePostArticleRoute = async (req, res) => {
   const { id } = req.params;
-  const idUser = req.user._id
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ error: `${id} n'est pas valide` });
@@ -34,17 +33,6 @@ export const getOnePostArticleRoute = async (req, res) => {
     const post = await ArticleModel.findById(id).populate(
       "admin",
       "nom_prenoms"
-    );
-    const user = await UserModel.findById(idUser)
-
-    await UserModel.findByIdAndUpdate(
-      idUser,
-      {
-        $set: {
-          visite: Number(user.visite) + 1,
-        },
-      },
-      { new: true }
     );
     await ArticleModel.findByIdAndUpdate(
       id,
@@ -343,7 +331,9 @@ export const putOnePostOrganigrameRoute = async (req, res) => {
       },
       { new: true }
     );
-    return res.status(200).json({ post, success: "Modification d'un responsable a réussi" });
+    return res
+      .status(200)
+      .json({ post, success: "Modification d'un responsable a réussi" });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }

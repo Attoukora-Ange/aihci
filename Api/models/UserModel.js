@@ -59,10 +59,6 @@ const UserSchema = new Schema(
       type: String,
       trim: true,
     },
-    visite: {
-      type: Number,
-      default: 0,
-    },
     isAdmin: {
       type: Boolean,
       required: true,
