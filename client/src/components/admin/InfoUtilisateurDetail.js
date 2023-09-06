@@ -120,6 +120,9 @@ export const InfoUtilisateurDetail = () => {
               <TableCell sx={{ fontSize: 14, fontWeight: 500 }}>
                 Structure d'accueil
               </TableCell>
+              <TableCell sx={{ fontSize: 14, fontWeight: 500 }}>
+                Nombre de visite
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -198,6 +201,13 @@ export const InfoUtilisateurDetail = () => {
                   scope="row"
                 >
                   {row.structure}
+                </TableCell>
+                <TableCell
+                  sx={{ fontSize: 12, fontWeight: 300 }}
+                  component="th"
+                  scope="row"
+                >
+                  visité {row.visite} fois
                 </TableCell>
                 <TableCell
                   sx={{ fontSize: 12, fontWeight: 500, color: "yellowgreen" }}

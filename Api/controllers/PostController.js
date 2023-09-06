@@ -25,6 +25,7 @@ export const getAllPostsArticleRoute = async (_, res) => {
 
 export const getOnePostArticleRoute = async (req, res) => {
   const { id } = req.params;
+  const idUser = req.user._id
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ error: `${id} n'est pas valide` });
@@ -34,7 +35,17 @@ export const getOnePostArticleRoute = async (req, res) => {
       "admin",
       "nom_prenoms"
     );
+    const user = await UserModel.findById(idUser)
 
+    await UserModel.findByIdAndUpdate(
+      idUser,
+      {
+        $set: {
+          visite: Number(user.visite) + 1,
+        },
+      },
+      { new: true }
+    );
     await ArticleModel.findByIdAndUpdate(
       id,
       {
