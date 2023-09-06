@@ -147,7 +147,7 @@ export const ActualArticleDetail = ({ art }) => {
   };
 
   //Supprimer un article de la base de données
-  const handleClickDelete = (id) => async () => {
+  const handleClickDelete = async (id) => {
     const token = JSON.parse(localStorage.getItem("token"));
     const option = {
       headers: {
