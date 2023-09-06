@@ -8,6 +8,7 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useDataContexte } from "../../context/DataContext";
+import { Link } from "react-router-dom";
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   position: "absolute",
@@ -44,7 +45,6 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
   height: 500,
   overflow: "hidden",
   objectFit: "cover",
-  cursor: "auto",
   [theme.breakpoints.down("md")]: {
     height: 300,
     width: "100%",

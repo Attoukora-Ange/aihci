@@ -155,7 +155,7 @@ export const ActualArticleDetail = ({ art }) => {
       },
     };
     try {
-      const dataSupprimer = await axios.put(
+      const dataSupprimer = await axios.delete(
         `${process.env.REACT_APP_API}/post/article/${id}`,
         option
       );
