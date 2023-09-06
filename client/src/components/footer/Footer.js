@@ -29,7 +29,7 @@ export const Footer = () => {
             Plan du site
           </Typography>
           <StyledTypography variant="body1" component={Link} to="/">
-            Acceuil
+            Accueil
           </StyledTypography>
           <StyledTypography variant="body1" component={Link} to="/actualites">
             Actualités

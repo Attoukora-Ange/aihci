@@ -54,6 +54,7 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
 const StyledCard = styled(Card)(({ theme }) => ({
   height: "100%",
   width: 500,
+  textDecoration: "none",
   overflow: "hidden",
   [theme.breakpoints.down("md")]: {
     width: "100%",
@@ -67,7 +68,7 @@ export const HomeHeader = () => {
     <StyledContainer maxWidth="xl">
       {troisPremier?.map((article) => (
         <StyledBox key={article._id} position="relative">
-          <StyledCard>
+          <StyledCard component={Link} to={"/actualites/" + article._id}>
             <CardActionArea disableRipple disableTouchRipple>
               <StyledCardMedia
                 component="img"

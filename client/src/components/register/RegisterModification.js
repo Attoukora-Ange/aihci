@@ -186,7 +186,7 @@ export const RegisterModification = ({ member }) => {
             value={user.newPassword}
             onChange={handleChange}
           />
-          <Stack direction="row" sx={{ width: "50%" }} gap={1}>
+          <Stack direction="row" flexWrap="wrap" sx={{ width: "50%" }} gap={1}>
             <StyledButton
               variant="contained"
               color="success"

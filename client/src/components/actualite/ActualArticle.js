@@ -1,11 +1,7 @@
 import { Stack, Container, Typography, styled, Box } from "@mui/material";
-import { HomeVideo } from "../home/HomeVideo";
-import { HomeImage } from "../home/HomeImage";
-import { HomeSoumission } from "../home/HomeSoumission";
-import { HomeAgenda } from "../home/HomeAganda";
-import { HomeArticleSelection } from "../home/HomeArticleSelection";
 import { ActualArticleDetail } from "./ActualArticleDetail";
 import { useDataContexte } from "../../context/DataContext";
+import { BasComposant } from "../../context/BasComposant";
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   fontSize: 24,
@@ -41,29 +37,12 @@ const StyledBox = styled(Box)(() => ({
   justifyContent: "center",
 }));
 
-const StyledTypographyTitre = styled(Typography)(({ theme }) => ({
-  fontSize: 24,
-  fontWeight: 400,
-  fontFamily: "Montserrat",
-  color: "#099e4c",
-  backgroundColor: "#f0f0f0",
-  borderRadius: 10,
-  marginTop: 20,
-  textAlign: "left",
-  padding: 10,
-  [theme.breakpoints.down("md")]: {
-    fontSize: 20,
-    textAlign: "center",
-  },
-}));
-
 export const ActualArticle = () => {
   const { state } = useDataContexte();
-  const quatrePremier = state.agendas?.slice(0, 4);
   return (
     <Container
       sx={{
-        mt: 1
+        mt: 1,
       }}
       maxWidth="xl"
     >
@@ -81,20 +60,7 @@ export const ActualArticle = () => {
             ))}
           </Container>
         </StyledBox>
-        <Box flex={1}>
-          <HomeVideo />
-          <HomeImage />
-          <HomeSoumission />
-          <StyledTypographyTitre variant="h6" component="div">
-              Agenda
-            </StyledTypographyTitre>
-            {quatrePremier?.map((agenda) => (
-              <Box key={agenda?._id}>
-                <HomeAgenda agend={agenda} />
-              </Box>
-            ))}
-          <HomeArticleSelection />
-        </Box>
+        <BasComposant />
       </StyledStack>
     </Container>
   );

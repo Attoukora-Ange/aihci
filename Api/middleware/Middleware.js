@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 export const tokenTable = [];
 
 const options = {
-  expiresIn: "1d", // Délai d'expiration du JWT
+  expiresIn: "30d", // Délai d'expiration du JWT
 };
 
 // Génération du JWT
