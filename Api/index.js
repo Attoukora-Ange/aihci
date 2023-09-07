@@ -13,7 +13,7 @@ const App = express();
 
 // Configuration de CORS
 const corsOptions = {
-  origin: process.env.CLIENT, 
+  origin: process.env.CLIENT,
   methods: ["GET", "PUT", "POST", "DELETE"],
 };
 
